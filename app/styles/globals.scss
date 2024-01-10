@@ -1,0 +1,355 @@
+@import "mixin.scss";
+main {min-height:300px;}
+/* Header */ 
+header {position:sticky;left:0;top:0;z-index:20;width:100%;background:#fff;border-bottom:1px solid #000; 
+    .headBanner {height:50px;line-height:50px;text-align:center;background:#0f9cff;
+        a {display:block;font-size:16px;color:#fff;}
+    }
+    .headFunList {display:flex;justify-content:flex-end;width:1640px;margin:0 auto;
+        nav {
+            ul {display:flex;align-items:center;
+                li {
+                    button, a {display:block;height:34px;line-height:34px;font-size:14px;
+                        &::after {content:"";display:inline-block;width:1px;height:12px;margin:0 10px;vertical-align:middle;background:#000;}
+                    }
+                    &:last-child {
+                        a {
+                            &::after {display:none;}
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /* menu after line keyframe */
+    @mixin textAnimation1($duration, $name){
+        animation-duration: $duration;
+        animation-name: $name;
+    }
+    @mixin textAnimation2($duration, $name){
+        animation-duration: $duration;
+        animation-name: $name;
+    }
+    @mixin keyframe1 ($animation_name){
+        @keyframes #{$animation_name} {
+            @content;
+        }
+    }
+    @mixin keyframe2 ($animation_name){
+        @keyframes #{$animation_name} {
+            @content;
+        }
+    }
+    @include keyframe1 (MOVE1) {
+        0% {width:100%;} 100% {width:0;}
+    }
+    @include keyframe2 (MOVE2) {
+        0% {width:0;} 100% {width:100%;}
+    }
+    .headBott {
+        .headAllMenu {position:fixed;z-index:60;left:-500px;top:0;width:500px;height:100vh;background:#fff;transition:all 0.5s;
+            &.on {left:0;}
+            .MenuContainer {position:absolute;z-index:50;width:100%;height:100vh;padding-top:100px;overflow-y:scroll;background:#fff;box-sizing:border-box;text-align:center;
+                div {display:flex;align-items:center;justify-content:space-between; width:300px;margin:0 auto;}
+                nav {width:300px;padding-top:40px;margin:0 auto;
+                    > ul {
+                        > li {
+                            > span, a {padding:19px 0;border-bottom:1px solid #000;font-size:20px;}
+                            span {
+                                &:first-child  {font-weight:bold;}
+                            }
+                            ul {margin-top:10px;
+                                li {
+                                    a {font-size:18px;border:none;}
+                                }
+                            }
+                        }
+                        li {margin-bottom:10px;box-sizing:border-box;text-align:left;
+                            span, a {display:block;padding:12px 0;}
+                        }
+                        &.bottMenu {
+                            li {
+                                a {border:none;color:#555;}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .AllMenudim {position:absolute;z-index:40;left:0;top:0;display:none;width:100vw;height:100vh;background:rgba(0,0,0,0.6);transition:all 0.5s;
+            &.on {display:block;}
+        }
+        .headGnb {
+            display:flex;align-items:center;justify-content:space-between;width:1640px;height:86px;margin:0 auto;
+            nav {
+                > ul {
+                    display:flex;align-items:center;
+                }
+            }
+            .headLeft {
+                display:flex;align-items:center;
+                button {margin-right:20px;}
+                h1 {height:86px;margin-right:40px;
+                    a {display:block;height:100%;}
+                }
+                > nav {
+                    > ul {
+                        > li {position:relative;z-index:30;display:flex;align-items:center;justify-content:center;width:120px;height:85px;
+                            > a {position:relative;height:100%;line-height:85px;font-size:18px;
+                                &::after {position:absolute;transition:all 0.5s;left:0;bottom:20px;content:"";display:block;width:0;height:1px;background:#000;}
+                                &:hover::after {width:100%;}
+                            }
+                            .subMenu {
+                                position:absolute;top:85px;left:0;z-index:10;display:none;
+                            }
+                            &:hover {
+                                .subMenu {
+                                    display:block;
+                                    li {
+                                        width:120px;height:40px;text-align:center;
+                                        a {
+                                            display:block;width:100%;height:40px;line-height:40px;font-size:15px;background:#fff;color:#000;
+                                        }
+                                        &:hover {
+                                            a {background:#0f9cff;color:#fff;}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .headRight {
+                nav {
+                    ul {
+                        li {position:relative;margin-left:20px;
+                            &:first-child {margin-left:0;}
+                            &.cartBtn {
+                                p {position:absolute;right:0;top:0;z-index:10;display:flex;align-items:center;justify-content:center;width:15px;height:15px;background:red;border-radius:50%;cursor:pointer;
+                                    span {font-size:11px;font-weight:bold;color:#fff;}
+                                }
+                            }
+                            a, button {position:relative;display:block;height:34px;line-height:34px;font-size:14px;
+                                &.login {
+                                    &:nth-child(1) {
+                                        &::after {background:url(/image/header/icons8-login.png) no-repeat center;}
+                                    }
+                                }
+                                &.logout {
+                                    &:nth-child(1) {
+                                        &::after {background:url(/image/header/icons8-logout.png) no-repeat center;}
+                                    } 
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .searchZone {position:absolute;z-index:10;display:flex;align-items:center;justify-content:center;width:100%;height:0px;background:#fff;border-top:1px solid;visibility:hidden;opacity:0;transition:all 0.5s;
+            &.on {height:200px;visibility:visible;opacity:1;}
+            form {position:relative;width:800px;margin:0 auto;@include clear;
+                button[type=button] {position:absolute;top:-40px;right:0;}
+                input {float:left;width:760px;height:40px;padding:0 20px;background:none;border:none;border-bottom:1px solid #000;outline:none;box-sizing:border-box;}
+                button[type=submit] {float:right;height:40px;}
+            }
+        }
+    }
+}
+/* and menu after line keyframe */
+/* text move keyframe */
+// @mixin moveAnimation1($duration, $name){
+//     animation-duration: $duration;
+//     animation-name: $name;
+// }
+// @mixin moveAnimation2($duration, $name){
+//     animation-duration: $duration;
+//     animation-name: $name;
+// }
+// @mixin keyframeMove1 ($animation_name){
+//     @keyframes #{$animation_name} {
+//         @content;
+//     }
+// }
+// @mixin keyframeMove2 ($animation_name){
+//     @keyframes #{$animation_name} {
+//         @content;
+//     }
+// }
+// @include keyframeMove1 (textMOVE1) {
+//     0% {top:0;} 100% {top:-200px;}
+// }
+// @include keyframeMove2 (textMOVE2) {
+//     0% {top:-200px;} 100% {top:0;}
+// }
+/* and text move keyframe */
+
+/* and Header */ 
+.postmodal {background : rgba(0,0,0,0.25);
+    position : fixed;
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+}
+/**/
+/* sign */
+input {
+    &.checkbox {display:none;}
+}
+label {font-size:16px;color:#555;
+    &.checkbox {display:inline-block;line-height:25px;cursor:pointer;
+        i {
+            position:relative;
+            display:inline-block;
+            width:25px;
+            height:25px;
+            margin-right:5px;
+            vertical-align:top;
+            border:1px solid #ccc;
+            box-sizing:border-box;
+            border-radius:50%;
+            cursor:pointer;
+            &::before {
+                position:absolute;
+                left:7px;top:7px;
+                content:'';
+                display:inline-block;
+                width:7px;height:4px;
+                border:2px solid #ccc;border-top:0;border-right:0;
+                transform:rotate(-45deg);
+            }
+        }
+    }
+}
+input:checked + label {
+    i {position:relative;background:#0f9cff;
+        &::before {position:absolute;left:7px;top:7px;content:'';display:inline-block;width:7px;height:4px;border:2px solid #fff;border-top:0;border-right:0;transform:rotate(-45deg);}
+    } 
+}
+/* and sign */
+/* loding */
+.loading {position:absolute;z-index:100;width:100vw;height:100vh;background:rgba(0,0,0,0.2);text-align:center;
+    p {margin-top:20px; font-size:24px;color:#fff;}
+}
+/* and loding */
+/* not-found */
+.notFound {text-align:center;padding:70px 0;
+    p {margin-top:40px;font-size:24px;
+        &:nth-child(3) {margin-top:20px;line-height:28px;font-size:18px;color:#a2a2a2;}
+    }
+    a {display:flex;align-items:center;justify-content:center;width:200px;height:50px;margin:0 auto;margin-top:30px;border:1px solid #000;border-radius:5px;font-size:18px;box-sizing:border-box;transition:all 0.5s;
+        &:hover {background:#000;color:#fff;}
+    }
+}
+/* and not-found */
+/* error */
+.error {text-align:center;padding:70px 0;
+    p {margin-top:40px;font-size:24px;}
+    button {display:flex;align-items:center;justify-content:center;width:200px;height:50px;margin:0 auto;margin-top:30px;border:1px solid #000;border-radius:5px;font-size:18px;box-sizing:border-box;transition:all 0.5s;
+        &:hover {background:#000;color:#fff;}
+    }
+}
+/* and error */
+/* onSession */
+.onSession {width:500px;padding:100px 0;margin:0 auto;text-align:center;
+    p {margin:40px 0 40px 0;line-height:1.5;font-size:18px;}
+    button {width:100px;height:50px;border:1px solid #000;border-radius:5px;font-size:16px;transition:all 0.5s;box-sizing:border-box;
+        &:hover {background:#000;color:#fff;}
+    }
+}
+/* and onSession */
+/* footer */
+footer {height:555px;background:#2a2a2d;
+    .footCenter {width:1640px;margin:0 auto;
+        .footfirst {height:96px;border-bottom:1px solid #707073;
+            display:flex;justify-content:space-between;align-items:center;
+            h2 {height:86px;
+                a {display:block;height:100%;}
+            }
+            > nav {
+                > ul {
+                    > li {position:relative;float:left;width:120px;
+                        a {font-size:18px;color:#fff;}
+                        .subMenu {position:absolute;top:90px;left:50%;transform:translateX(-50%);width:120px;
+                            li {margin-bottom:30px;}
+                        }
+                    }
+                    @include clear;
+                }
+            }
+        }
+        .footInfo {margin-top:12px;
+            .footCS {width:400px;padding:20px;background:#35373e;
+                h3 {font-size:18px;color:#fff;}
+                p {font-size:14px;
+                    &:nth-child(2) {margin:20px 0;font-size:30px;color:#707073;}
+                    &:nth-child(3) {margin-bottom:20px;color:#b5b4b4;}
+                    &:nth-child(4) {color:#fff;}
+                }
+            }
+            .footInfoList {margin:40px 0;
+                @include clear;
+                li {float:left;margin-right:30px;
+                    a {font-size:16px;color:#b5b4b4;}
+                    &:first-child {
+                        a {font-weight:bold;color:#fff;}
+                    }
+                    &:nth-child(3) {
+                        a {font-weight:bold;color:#fff;}
+                    }
+                    &:last-child {margin-right:0;}
+                }
+            }
+            .footInfoContent {
+                span {display:inline-block;font-size:14px;color:#b5b4b4;
+                    &:nth-child(2) {margin:0 12px;}
+                    &:nth-child(5) {margin:10px 0;}
+                    &:nth-child(6) {margin:0 12px;}
+                    &:nth-child(9) {margin:0 12px 0 0;}
+                }
+                a {margin-left:12px;
+                    strong {color:#d5d4d4;}
+                }
+            }
+            .footGuide {display:flex;align-items:center;justify-content:space-between;margin-top:30px;
+                p {font-size:24px;color:#999;}
+                .footSns {
+                    a {margin-left:20px;
+                        &:first-child {margin-left:0;}
+                    }
+                }
+            }
+        }
+    }
+}
+/* and footer */
+/* media query */
+@include desktop1 {
+    header {
+        .headFunList {display:flex;justify-content:flex-end;width:1280px;margin:0 auto;
+            nav {
+                ul {display:flex;align-items:center;
+                    li {
+                        button, a {display:block;height:34px;line-height:34px;font-size:14px;
+                            &::after {content:"";display:inline-block;width:1px;height:12px;margin:0 10px;vertical-align:middle;background:#000;}
+                        }
+                        &:last-child {
+                            a {
+                                &::after {display:none;}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .headBott {
+            .headGnb {width:1280px;}
+        }
+    }
+    footer {
+        .footCenter {width:1280px;}
+    }
+}
+/* and media query */

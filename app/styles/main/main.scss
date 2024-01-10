@@ -1,0 +1,249 @@
+@import "../mixin.scss";
+.main {
+    @mixin sectionTitle($wid){
+        width:$wid;display:flex;align-items:center;justify-content:space-between;margin:140px 0 70px 0;
+    }
+    .sectionTitle {display:flex;align-items:center;justify-content:space-between;margin:140px 0 70px 0;
+        h2 {font-size:46px;}
+        a {font-size:18px;}
+    }
+    .section1 {position:relative;width:100vw;overflow-x:hidden;
+        .section1Center {width:100%;
+            .sectionBg {position:relative;display:flex;width:100vw;
+                .bgInfo{
+                    position:absolute;top:280px;left:140px;color:#fff;
+                    p {font-size:3.125vw;font-weight:bold;text-shadow:2px 5px 4px gray;}
+                    h3 {margin:20px 0 15px 0; font-size:24px;}
+                    h4 {font-size:18px;font-weight:400;}
+                    a {display:flex;justify-content:center;align-items:center;width:200px;height:70px;margin-top:40px;font-size:20px;background:rgba($color: #fff, $alpha: 0.2);border:1px solid #fff;box-sizing:border-box;color:#fff;transition:all 0.5s;
+                        &:hover {background:rgba($color: #fff, $alpha: 0.5);}
+                    }
+                }
+            }
+            .swiper-pagination {top:600px;left:140px;width:50px;height:50px;font-size:16px;color:#fff;
+                span {font-size:16px;font-weight:bold;color:#fff;}
+            }
+            .autoplay-progress {
+                position: absolute;
+                left:140px;
+                bottom:270px;
+                z-index:10;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                width:48px;
+                height:48px;
+                font-weight:bold;
+                color:#fff;
+                svg {
+                    --progress: 0;
+                    position: absolute;
+                    left: 0;
+                    top: 0px;
+                    z-index: 10;
+                    width: 100%;
+                    height: 100%;
+                    stroke-width: 4px;
+                    stroke:#0f9cff;
+                    fill: none;
+                    stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+                    stroke-dasharray: 125.6;
+                    transform: rotate(-90deg);
+                }
+            }
+        }
+    }
+    .section2 {width:1640px;margin:0 auto;
+        .cardItem {display:flex;justify-content: space-between;
+            .card {width:310px;text-align:right;
+                .cardImageLink {position:relative; display:block;width:310px;height:350px;
+                    img {width:100%;}
+                }
+                h4 {margin:18px 0 16px 0;
+                    a {
+                        font-size:20px;
+                    }
+                    &:nth-child(3) {margin:10px 0  16px 0;
+                        a {font-size:18px;color:#555;}
+                    }
+                }
+                .productfootInfo {display:flex;justify-content:space-between;
+                    span {font-size:16px;color:#555;
+                        strong {font-size:18px; color:#000;}
+                    }
+                }
+            }
+        }
+    }
+    .section3 {height:550px;padding-top:100px;margin-top:140px;text-align:center;background:url(/image/main/banner/section3.png) no-repeat center;background-size:cover;box-sizing:border-box;
+        p {line-height:1.3;color:#3f2727;
+            &:nth-child(1) {margin-bottom:60px;font-size:44px;}
+            &:nth-child(2) {line-height:1.5;font-size:24px;}
+        }
+        img {margin-top:40px;}
+    }
+    .section4 {width:1640px;margin:0 auto;
+        .monthZone{display:flex;justify-content:space-between;
+            > div{display:flex;
+                flex-direction:column;
+                justify-content:space-between;
+                div {width:370px;
+                    h4 {font-size:30px;}
+                    p {
+                        white-space:pre-line;
+                        &:nth-child(2) {margin:14px 0 40px 0;font-size:16px;color:#333;}
+                        &:nth-child(3) {line-height:30px;font-size:18px;}
+                    }
+                    a {display:inline-block;margin-top:20px;font-size:16px;color:#999;
+                        &:hover {color:#333;}
+                    }   
+                }
+                .monthNumGroup {display:flex;justify-content:space-between;
+                    button {width:100%;font-size:18px;color:#999;
+                        &.active {color:#e60000;}
+                    }
+                }
+            }
+            .monthImgGroup {
+                display:flex;
+                flex-direction:column;
+                justify-content:space-between;
+                height:650px;
+                button {
+                    width:150px;
+                    img {
+                        border:3px solid #999;
+                        border-radius:15px;
+                        box-sizing:border-box;
+                    }
+                    &.active{
+                        img {
+                            border:3px solid #e60000;
+                        }
+                    }
+                }
+            }
+            .monthBigImgGroup {border-radius:15px; box-shadow:5px 5px 14px 2px #333;}
+        }
+        .monthInfo {white-space:pre-line;}
+    }
+    .section5 {width:1640px;margin:0 auto;
+        .discountGroup {position:relative;margin-bottom:70px;
+            @include clear;
+            div {float:left;width:395px;height:350px;margin-right:20px;background-repeat:no-repeat;
+                @for $i from 1 to 9 { // 반복문
+                    &.discountImage#{$i} {background-image:url(/image/main/discount/discount#{$i}.png);} 
+                }
+                &:nth-child(-n+4) {margin-bottom:20px}
+                &:nth-child(4n+0) {margin-right:0;}
+            }
+            
+        }
+    }
+    .section6 {width:1640px;margin:0 auto;text-align:center;
+        .beneFits {font-size:36px;font-weight:600;}
+        .beneFitsText {margin:40px 0 80px 0; font-size:24px;}
+        .beneGroup {display:flex;justify-content:space-between;
+            .beneBox {width:450px;height:250px;padding-top:50px;border:1px solid #000;border-radius:10px;box-sizing:border-box;
+                p {font-size:24px;color:#555;}
+                h5 {margin:30px 0;font-size:48px;}
+                a {font-size:18px;}
+            }
+        }
+    }
+    @mixin reviewAnimation1($duration, $name, $count, $function){
+        animation-duration: $duration;
+        animation-name: $name;
+        animation-iteration-count: $count;
+        animation-timing-function: $function;
+    }
+    @mixin reviewAnimation2($duration, $name, $count, $function){
+        animation-duration: $duration;
+        animation-name: $name;
+        animation-iteration-count: $count;
+        animation-timing-function: $function;
+    }
+    @mixin keyframeReview1 ($animation_name){
+        @keyframes #{$animation_name} {
+            @content;
+        }
+    }
+    @mixin keyframeReview2 ($animation_name){
+        @keyframes #{$animation_name} {
+            @content;
+        }
+    }
+    @include keyframeReview1 (RIVEW1) {
+        0% {transform:translateX(0);}
+        50% {transform:translateX(-100%);}
+        50.01% {transform:translateX(100%);}
+        100% {transform:translateX(0);}
+    }
+    @include keyframeReview2 (RIVEW2) {
+        0% {transition:translateX(0);}
+        100% {transform:translateX(-200%);}
+    }
+    .section7 {margin-bottom:70px;overflow:hidden;
+        .sectionTitle {width:1640px;margin:140px auto 70px auto;}
+        .reviewSlide {display:flex;position:relative;overflow:hidden;
+            &::before, &::after {content:"";position:absolute;z-index:2;width:200px;height:300px;background:linear-gradient(to right, white 0%, rgba(255, 255, 255, 0) 100%);}
+            &::before {left:0;top:0;}
+            &::after {right:0;top:0;transform:rotateZ(180deg);}
+            .reviewGroup {display:flex;
+                &.original {@include reviewAnimation1(33s, RIVEW1, infinite, linear);}
+                &.clone {@include reviewAnimation2(33s, RIVEW2, infinite, linear);}
+                div {width:380px;margin-right:40px;
+                    p {
+                        &:nth-child(2) {margin:20px 0;line-height:26px;font-size:16px;color:#333;white-space:pre-line;}
+                        &:last-child {margin-top:20px;}
+                    }
+                }
+            }
+        }
+    }
+}
+/* media query */
+@include desktop1 {
+    .main {
+        .section2 {width:$breakpoint-tablet;
+            .cardItem {flex-wrap: wrap;
+                .card {width:246px;
+                    .cardImageLink {width:246px;height:277px;}
+                }
+                h4 {
+                    a {
+                        font-size:18px;
+                    }
+                    &:nth-child(3) {
+                        a {font-size:16px;color:#555;}
+                    }
+                }
+                .productfootInfo {display:flex;justify-content:space-between;
+                    span {font-size:14px;color:#555;
+                        strong {font-size:16px; color:#000;}
+                    }
+                }
+            }
+        }
+        .section4 {width:$breakpoint-tablet;}
+        .section5 {width:$breakpoint-tablet;
+            .discountGroup {
+                div {float:left;width:308px;height:314px;margin-right:16px;background-repeat:no-repeat;
+                    @for $i from 1 to 9 { // 반복문
+                        &.discountImage#{$i} {background-image:url(/image/main/discount/1280/discount#{$i}.png);} 
+                    }
+                    &:nth-child(-n+4) {margin-bottom:16px}
+                }
+            }
+        }
+        .section6 {width:$breakpoint-tablet;
+            .beneGroup {
+                .beneBox {width:400px;}
+            }
+        }
+        .section7 {
+            .sectionTitle {width:$breakpoint-tablet;}
+        }
+    }
+}
+/* and media query */

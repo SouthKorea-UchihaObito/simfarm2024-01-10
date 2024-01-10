@@ -1,0 +1,39 @@
+@import "../mixin.scss";
+.allGood {width:1640px;padding:70px 0;margin:0 auto;
+    h2 {margin-bottom:40px;}
+    nav {
+        ul {@include clear;
+            li {float:left;margin-right:20px;
+                a {font-size:16px;}
+            }
+        }
+    }
+    .allItemBox {
+        .allItemGroup {
+            .allexplanation {display:flex;align-items:center;justify-content:space-between;margin:20px 0;
+                .allFun {
+                    button {margin-left:20px;
+                        &.active {font-weight:bold; color:#0f9cff;}
+                        &:first-child {margin-left:0;}
+                    }
+                }
+            }
+            .itemGroup {display:flex;justify-content:space-between;
+                .item {width:310px;
+                    h4 {margin:20px 0;
+                        &:nth-child(2) {
+                            a {font-size:20px;}
+                        }
+                        a {font-size:18px;}
+                    }
+                    .itemImageLink {display:block;height:350px;}
+                    .itemMoneyBox {display:flex;align-items:center;justify-content:space-between;
+                        span {font-size:16px;
+                            strong {font-size:18px;}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

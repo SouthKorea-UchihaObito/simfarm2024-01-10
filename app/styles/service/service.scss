@@ -1,0 +1,219 @@
+@import "../mixin.scss";
+/**/
+.serviceNavGnb {
+    nav {
+        > ul {
+            > li {
+                span {border-bottom:1px solid #000;font-size:22px;font-weight:bold;}
+                ul {
+                    li {
+                        a {font-size:18px;}
+                    }
+                }
+            }
+        }
+        ul {
+            li {
+                
+                span, a {display:block;padding:12px 0;}
+                a {
+                    &.active {color:red;}
+                }
+            }
+        }
+    }
+} 
+/* notice */ 
+.notice {
+    .noticeCenter{display:flex;justify-content:space-between;width:1640px;padding:70px 0;margin:0 auto;
+        .noticeLeft {
+            h3 {padding:15px 0;margin-bottom:20px;font-size:24px;border-bottom:1px solid #000;}
+        }
+        .noticeRgiht {width:1200px;@include clear;
+            .noticeNamed {margin-bottom:20px;padding:15px 0;font-size:24px;}
+            /**/
+            .noticeTable {width:100%;
+                caption {text-indent:-9999px;}
+                tr {
+                    th {background:#d7d7d7;border-top:2px solid #000;font-size:16px;}
+                    th, td {padding:15px 0;border-bottom:1px solid #7d7d7d;}
+                    td {font-size:14px;text-align:center;
+                        &.tabelContent {text-align:left;}
+                    }
+                }
+            }
+        }
+    }
+}
+/* and notice */ 
+/* qa */ 
+.qa {
+    .qaCenter{display:flex;justify-content:space-between;width:1640px;padding:70px 0;margin:0 auto;
+        .qaLeft {
+            h3 {padding:15px 0;margin-bottom:20px;font-size:24px;border-bottom:1px solid #000;}
+        }
+        .qaRgiht {width:1200px;@include clear;
+            .qaNamed {margin-bottom:20px;padding:15px 0;font-size:24px;}
+        }
+    }
+}
+/* and qa */ 
+/* faq */ 
+.faq {
+    .faqCenter{display:flex;justify-content:space-between;width:1640px;padding:70px 0;margin:0 auto;
+        .faqLeft {
+            h3 {padding:15px 0;margin-bottom:20px;font-size:24px;border-bottom:1px solid #000;}
+        }
+        .faqRgiht {width:1200px;@include clear;
+            .faqNamed {margin-bottom:20px;padding:15px 0;font-size:24px;}
+        }
+    }
+}
+/* and faq */ 
+/* delivery */ 
+.delivery {
+    .deliveryCenter{display:flex;justify-content:space-between;width:1640px;padding:70px 0;margin:0 auto;
+        
+        .deliveryLeft {
+            h3 {padding:15px 0;margin-bottom:20px;font-size:24px;border-bottom:1px solid #000;}
+        }
+        .deliveryRgiht {width:1200px;@include clear;
+            .deliveryNamed {margin-bottom:20px;padding:15px 0;font-size:24px;}
+            div {
+                &.deliveryGuide {
+                    h5 {margin:50px 0 40px 0;font-size:20px;}
+                    p {margin-bottom:10px;line-height:1.7;font-size:16px;}
+                    dl {
+                     dt {margin-bottom:10px; font-size:20px;font-weight:bold;}
+                     dd {margin-bottom:10px;line-height:1.7;font-size:16px;}
+                     &:last-child {margin-top:50px;}
+                    }
+                }
+            }
+        }
+    }
+}
+/* and delivery */ 
+/* event */ 
+.event {
+    .eventCenter{display:flex;justify-content:space-between;width:1640px;padding:70px 0;margin:0 auto;
+        
+        .eventLeft {
+            h3 {padding:15px 0;margin-bottom:20px;font-size:24px;border-bottom:1px solid #000;}
+        }
+        .eventRgiht {width:1200px;@include clear;
+            .eventNamed {margin-bottom:20px;padding:15px 0;font-size:24px;}
+        }
+    }
+}
+/* and event */ 
+/* community */ 
+.community {
+    .communityCenter{display:flex;justify-content:space-between;width:1640px;padding:70px 0;margin:0 auto;
+        .communityLeft {
+            h3 {padding:15px 0;margin-bottom:20px;font-size:24px;border-bottom:1px solid #000;}
+        }
+        .communityRgiht {width:1200px;@include clear;
+            .communityNamed {margin-bottom:20px;padding:15px 0;font-size:24px;}
+            .listGroup {margin-bottom:20px;
+                .list-item {
+                    padding:20px;
+                    opacity:1;
+                    background:white;
+                    border-radius:10px;
+                    box-shadow:rgb(224, 224, 224) 0px 2px 4px 0px;
+                    transition:all 1s;
+                    &.active {display:none;}
+                    h4 {
+                        font-size:20px;
+                        font-weight:800;
+                        overflow:hidden;
+                        text-overflow:ellipsis;
+                        white-space:nowrap;
+                        margin:0;
+                    }
+                    p {
+                        margin:15px 0px;
+                        overflow:hidden;
+                        text-overflow:ellipsis;
+                        white-space:nowrap;
+                        color:grey;
+                    }
+                    .writer {display:inline-block;margin-bottom:20px;}
+                    a, button {font-size:16px;}
+                }
+            }
+            .writeLink {float:right;width:80px;height:50px;border:1px solid #777;border-radius:10px;box-sizing:border-box;
+                a {display:block;height:100%;line-height:50px;text-align:center;}
+            }
+        }
+    }
+}
+/* and community */ 
+/* review */ 
+.review {
+    .reviewCenter{display:flex;justify-content:space-between;width:1640px;padding:70px 0;margin:0 auto;
+        
+        .reviewLeft {
+            h3 {padding:15px 0;margin-bottom:20px;font-size:24px;border-bottom:1px solid #000;}
+        }
+        .reviewRgiht {width:1200px;@include clear;
+            .reviewNamed {margin-bottom:20px;padding:15px 0;font-size:24px;}
+        }
+    }
+}
+/* and review */ 
+
+/* media query */
+@include desktop1 {
+    /* notice */ 
+    .notice {
+        .noticeCenter {width:$breakpoint-tablet;
+            .noticeRgiht {width:1000px;}
+        }
+    }
+    /* and notice */ 
+    /* community */ 
+    .community {
+        .communityCenter {width:$breakpoint-tablet;
+            .communityRgiht {width:1000px;}
+        }
+    }
+    /* and community */ 
+    /* qa */ 
+    .qa {
+        .qaCenter {width:$breakpoint-tablet;
+            .qaRgiht {width:1000px;}
+        }
+    }
+    /* and qa */
+    /* faq */
+    .faq {
+        .faqCenter {width:$breakpoint-tablet;
+            .faqRgiht {width:1000px;}
+        }
+    }
+    /* and faq */
+    /* delivery */
+    .delivery {
+        .deliveryCenter {width:$breakpoint-tablet;
+            .deliveryRgiht {width:1000px;}
+        }
+    }
+    /* and delivery */
+    /* event */
+    .event {
+        .eventCenter {width:$breakpoint-tablet;
+            .eventRgiht {width:1000px;}
+        }
+    }
+    /* and event */ 
+    /* review */
+    .review {
+        .reviewCenter {width:$breakpoint-tablet;
+            .reviewRgiht {width:1000px;}
+        }
+    }
+    /* and review */ 
+}
+/* and media query */

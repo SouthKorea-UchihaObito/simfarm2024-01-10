@@ -1,0 +1,149 @@
+@import "../mixin.scss";
+.product {position:relative;
+    .productCenter {display:flex;justify-content:space-between;width:1640px;padding:70px 0;margin:0 auto;
+        .productImage {display:flex;justify-content:space-between;margin-right:40px;
+            .productBackImage {display:flex;align-items:center;justify-content:center;width:840px;min-height:1000px;margin-right:10px;background:#131313;overflow:hidden;
+                div {
+                    &.off { // 애니메이션 동작 전
+                        img {opacity:0;}
+                    }
+                    &.on { // 애니메이션 동작 후
+                        img {opacity:1;transition:opacity 0.7s;}
+                    }
+                }
+            }
+            .miniProdutImageGroup {display:flex;flex-direction:column;justify-content:space-between;
+                button {width:130px;
+                    &.active {background:#e60000;
+                        img {border:3px solid #e60000;}
+                    }
+                    img {
+                        border:3px solid #999;
+                        box-sizing:border-box;
+                    }
+                }
+            }
+        }
+        .productInfo {
+            .productEsTitle {font-size:22px;}
+            .productKrTitle {margin:10px 0 20px 0;font-size:18px;}
+            .productContent {line-height:26px;font-size:14px;}
+            .productPrice {margin:10px 0 20px 0;font-size:16px;color:#333;
+                strong {font-size:20px;color:#000;}
+            }
+            .deliveryPrice {font-size:16px;font-weight:bold;}
+            .MileagePrice {font-size:16px;font-weight:bold;}
+            p {
+                &:nth-child(n+5) {margin-bottom:20px;}
+            }
+            .hintZone {
+                form {
+                    .quantityZone {margin-bottom:20px;
+                        h5 {margin-bottom:10px;font-size:20px;font-weight:bold;color:#0f9cff;}
+                        p {
+                            &:nth-child(3) {margin-top:5px;}
+                        }
+                        .quantityNumBox {display:inline-block;border:1px solid #dfe4ec;border-radius:3px;
+                            button {width:20px;height:30px;
+                                &.minus {border-right:1px solid #dfe4ec;}
+                                &.plus {border-left:1px solid #dfe4ec;}
+                            }
+                            input[type=number] {width:40px;height:30px;border:none;text-align:center;}
+                            input[type=number]::-webkit-outer-spin-button,
+                            input[type=number]::-webkit-inner-spin-button {
+                                -webkit-appearance: none;
+                                margin: 0;
+                            }
+                        }
+                    }
+                    .selectGroup {
+                        h5 {margin-bottom:10px;font-size:20px;font-weight:bold;color:#0f9cff;} 
+                        .selectBox {display:flex;align-items:center;justify-content:space-between;width:620px;height:40px;padding:0 20px;border:1px solid #000;border-radius:5px;box-sizing:border-box;
+                            &.active {
+                                span {
+                                }
+                            }
+                            span {
+                                &:last-child {transition:0.5s all;}
+                            }
+                        }
+                        .selectOptions {margin-top:20px;border:1px solid #000;border-radius:5px;
+                            li {height:40px;line-height:40px;box-sizing:border-box;
+                                &:hover {
+                                    button {background:#999;color:#fff;}
+                                }
+                                button {width:100%;height:40px;padding:0 20px;box-sizing:border-box;text-align:left;}
+                            }
+                        }
+                    }
+                    .productPurchaseBtn {width:620px;height:40px;margin:30px 0 10px 0;border-radius:5px;background:#0f9cff;color:#fff;
+                        &:disabled {background:#35373e;}
+                    }
+                    .BtnGroup {display:flex;justify-content:space-between;
+                        button {width:305px;height:40px;border:1px solid #000;border-radius:5px;box-sizing:border-box;
+                            &.productCartBtn {} 
+                            &.productSaveBtn {}
+                        }
+                    }
+                    .lastPrice {display:flex;align-items:center;justify-content:space-between;margin-top:30px;
+                        p {font-size:16px;font-weight:bold;}
+                        div {
+                            span {
+                                &:first-child {font-size:14px;}
+                                &:last-child {font-size:18px;color:#0f9cff;}
+                            }
+                        }
+                    }
+                }
+                .popupCartShow {position:fixed;left:0;top:0;width:100%;height:100%;background:rgba($color: #000000, $alpha: 0.4);
+                    &.active {}
+                    .popupCartContainer {position:absolute;left:50%;top:50%;transform:translate(-50%, -50%);width:300px;height:200px;padding:0 20px;background:#fff;border-radius:5px;box-sizing:border-box;
+                        button {position:absolute;right:10px;top:10px;}
+                        div {display:flex;align-items:center;justify-content:center;flex-direction:column;width:100%;height:100%;
+                            p {margin-bottom:20px;line-height:1.5;font-size:14px;text-align:center;white-space:normal;}
+                            a {display:flex;align-items:center;justify-content:center;width:100px;height:40px;border:1px solid #000;border-radius:5px;box-sizing:border-box;}
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .productFoot {width:1200px;margin:0 auto;padding:70px;
+        .productTabGroup {display:flex;justify-content:space-between;
+            button {width:25%;padding:25px 0;font-size:18px;font-weight:bold;border-bottom:2px solid #999;
+                &.active {border-bottom:2px solid #000;}
+            }
+        }
+        .productTabOff {
+            div {
+                h5 {margin:50px 0 40px 0;font-size:20px;}
+                &.productGuide {
+                   p {margin-bottom:10px;line-height:1.7;font-size:16px;}
+                   dl {
+                    dt {margin-bottom:10px; font-size:20px;font-weight:bold;}
+                    dd {margin-bottom:10px;line-height:1.7;font-size:16px;}
+                    &:last-child {margin-top:50px;}
+                   }
+                }
+                &.productqaGroup {
+                    .qaDataGroup {padding:20px 0;border-top:1px solid #d3d3d3;border-bottom:1px solid #d3d3d3;
+                        &:nth-child(n+3) {border-top:none;}
+                        .qaDataHead {display:flex;align-items:center;justify-content:space-between;
+                            .qaDataHGroup {display:flex;align-items:center;
+                                .qaResult {display:flex;align-items:center;justify-content:center;width:100px;height:70px;margin-right:20px;background:#3d3a35;font-size:16px;color:#fff;
+                                    &.active {background:#0f9cff;}
+                                }
+                                p {font-size:16px;
+                                    &:nth-child(2) {margin-top:10px;}
+                                }
+                            }
+                        }
+                    }
+                    .bestWriteBox {display:flex;justify-content:flex-end;margin-top:20px;
+                        .bestqaWriteBtn {display:flex;align-items:center;justify-content:center;width:80px;height:40px;border:1px solid #000;border-radius:5px;box-sizing:border-box;}
+                    }
+                }
+            }
+        }
+    }
+}

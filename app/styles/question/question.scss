@@ -1,0 +1,30 @@
+@import "../mixin.scss";
+.bestQa {width:1200px;padding:70px 0;margin:0 auto;
+    h3 {margin-bottom:20px;font-size:18px;}
+    .bestQaProduct {display:flex;align-items:center;margin-bottom:20px;background:#eee;border-top:1px solid #000;border-bottom:1px solid #000;
+        img {margin-right:20px;}
+        div {
+            h4 {
+                &:first-child {margin-bottom:10px;}
+            }
+        }
+    }
+    form {
+        .bestQaGroup {
+            .bestQaTitleGroup {margin-bottom:20px;}
+            div {display:flex;align-items:center;justify-content:space-between;
+                input {height:40px;}
+                input, textarea {width: calc(100% - 90px);padding:0 20px;box-sizing:border-box;}
+                textarea {min-height:400px;padding:20px;line-height:1.7;resize:none;}
+            }
+            .bestQaBtnGroup {justify-content:center;margin-top:70px;
+                button {width:140px;height:50px;border-radius:5px;
+                    &:first-child {border:1px solid #000;}
+                    &:nth-child(2) {margin-left:10px;background:#000;color:#fff;
+                        &:disabled {background:#a7a3a3;}
+                    }
+                }
+            }
+        }
+    }
+}
